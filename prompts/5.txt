@@ -1,18 +1,22 @@
-!legal_moves!
+LEGAL MOVES: !legal_moves!, NULL
 
-Transform the list of chess moves above to csv format. Following these rules:
-- If the move contains "#", it's a checkmate, worth 10 points
-- If the move contains "=", it's a promotion, worth 6 points
-- If the move contains "x", it's a capture, worth 4 points
-- If the first letter is lowercase, it's a pawn move, worth 2 points
-- If the move contains "+", it's a check, worth 1 point
-- All other moves are worth 0 points
-- Use 1 and 0 for boolean values
+Transform the comma-delimited list of chess moves above to csv format. Follow the rules below:
+- If move has "#", checkmate, 10 points
+- If move has "=", promotion, 6 points
+- If move has "x", capture, 4 points
+- If first letter is lowercase, pawn, 2 points
+- If move has "+", check, 0 points
+- If none of the above, none, 0 points
+- Use 1 or 0 for boolean value
+- Stop after 30 moves
+- If hit NULL value, ignore it and stop
 
-After you are done, select the move with the greatest total_points and output:
+After you are done, focus on the csv data and output the following report:
 ```
-Greatest total_points: {greatest_total_points}
-SELECTED_MOVE: {move}, {explanation}
+---
+I have examined each row in the csv table and I have observed the greatest value in the total_points column (the one on the far right) is: {greatest value}, {explanation}
+The entry with the largest total_points is: {entry with greatest total points}, {explanation}
+Therefore, I submit my SELECTED_MOVE: {move}, {explanation}
 ```
 
-id,move,is_checkmate,is_promotion,is_capture,is_check,first_letter,is_first_letter_lowercase,points,explanation,total_points
+remaining_before_termination,move,is_checkmate,is_check,is_promotion,is_capture,first_letter,is_first_letter_in_move_lowercase,is_none_of_above,explanation,total_points
