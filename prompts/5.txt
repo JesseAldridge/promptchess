@@ -1,0 +1,18 @@
+!legal_moves!
+
+Transform the list of chess moves above to csv format. Following these rules:
+- If the move contains "#", it's a checkmate, worth 10 points
+- If the move contains "=", it's a promotion, worth 6 points
+- If the move contains "x", it's a capture, worth 4 points
+- If the first letter is lowercase, it's a pawn move, worth 2 points
+- If the move contains "+", it's a check, worth 1 point
+- All other moves are worth 0 points
+- Use 1 and 0 for boolean values
+
+After you are done, select the move with the greatest total_points and output:
+```
+Greatest total_points: {greatest_total_points}
+SELECTED_MOVE: {move}, {explanation}
+```
+
+id,move,is_checkmate,is_promotion,is_capture,is_check,first_letter,is_first_letter_lowercase,points,explanation,total_points

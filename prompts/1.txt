@@ -1,0 +1,4 @@
+Carlsen vs. Nakamura, Helsinki, 2023\nAnalyzed by Stockfish
+Game Transcript So Far: !move_history!
+Stockfish's Analysis:\nThe legal moves are !legal_moves!
+The best next move is:

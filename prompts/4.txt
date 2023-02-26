@@ -1,0 +1,61 @@
+You will be given a list of legal chess moves, LEGAL_MOVES. Pick one of them. Rules, in order of decreasing priority:
+1. CHECKMATE. If one or more moves contains #, select a move that contains a #.
+2. CAPTURE. If one or more moves contains x, select a move that contains x.
+3. PROMOTION. If one or more moves contains =, select the move that contains =.
+3. PAWN MOVE. Select a move that does not contain capital letters.
+4. RANDOM MOVE. Select any move from the list.
+Go through the list of rules in order, stating whether the rule applies. If a rule does apply, use it to select your move.
+
+Example 1:
+LEGAL_MOVES: Nf7, Rh2, g3, g4, Qxg8, Qg4#, Qc6, Qd6, Rb3, Rb2, Rb1
+RESPONSE:
+Rule CHECKMATE applies. Qg4# contains a #.
+SELECTED_MOVE: Qg4#
+
+Example 2:
+LEGAL_MOVES: Nf7, Rh2, g3, g4, Qxg8, Qc6, Qd6, Rb3, Rb2, Rb1
+RESPONSE:
+Rule CHECKMATE: No.
+Rule CAPTURE applies. Qxg8 contains x.
+SELECTED_MOVE: Qxg8
+
+Example 3:
+LEGAL_MOVES: Nf7+, Rh2, g3, g4, Qc6, Qd6, Rb3, Rb2, Rb1
+Rule CHECKMATE: No.
+Rule CAPTURE: No.
+Rule PROMOTION: No.
+Rule PAWN MOVE applies. g3 does not contain a capital letter.
+SELECTED_MOVE: g3.
+
+Example 4:
+LEGAL_MOVES: Ne7+, Na7, Nd6, Nb6, Bh8, Bg7, b8=Q, Bf6, Ba1, Kh3, Kh1, Kg1, Rf2, Re2, Rd2, Rc2, Rb2, Ra2, Rg1
+Rule CHECKMATE: No.
+Rule CAPTURE: No.
+Rule PROMOTION applies. b8=Q contains =.
+SELECTED_MOVE: b8.
+
+Example 5:
+LEGAL MOVES: Nf7, Rh2, Qc6, Qd6, Rb3, Rb2, Rb1
+Rule CHECKMATE does not apply.
+Rule CAPTURE does not apply.
+Rule PROMOTION does not apply
+Rule PAWN MOVE does not apply.
+Rule RANDOM MOVE applies.
+SELECTED_MOVE: Nf7.
+
+Example 6:
+LEGAL_MOVES: Na3, Nd2, Nc3, b3, b4, c5, Rh5+, Rh3, Rh2, Rh1, Kc2, Kd2, Ke1, Ng1, Nd4, Ng3, h7, g5
+Rule CHECKMATE: No.
+Rule CAPTURE: No.
+Rule PROMOTION: No.
+Rule PAWN MOVE applies. h7 does not contain a capital letter.
+SELECTED_MOVE: h7.
+
+Example 7:
+LEGAL MOVES: Na3, Nc3, Ra2, Ra3, Ra4, Bb2, Ba3, Bd2, Be3, Kd2, Ke2, Kf1, Kf2, exd5, fxe5, Rh2, Rh3
+Rule CHECKMATE: No.
+Rule CAPTURE applies. exd5 contains x.
+SELECTED_MOVE: exd5
+
+LEGAL MOVES: !legal_moves!
+RESPONSE:
