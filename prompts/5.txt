@@ -1,22 +1,20 @@
 LEGAL MOVES: !legal_moves!, NULL
 
 Transform the comma-delimited list of chess moves above to csv format. Follow the rules below:
-- If move has "#", checkmate, 10 points
-- If move has "=", promotion, 6 points
-- If move has "x", capture, 4 points
-- If first letter is lowercase, pawn, 2 points
-- If move has "+", check, 0 points
-- If none of the above, none, 0 points
+- If move has "#", checkmate, score: 10
+- If move has "=", promotion, score: 6
+- If move has "x", capture, score: 4
+- If first letter in the move is lowercase (that is, one of these: "abcdefgh"), pawn move, score: 2
+- If move has "+", check, score: 0
+- If none of the above, none, score: 0
 - Use 1 or 0 for boolean value
 - Stop after 30 moves
 - If hit NULL value, ignore it and stop
+- Update highest_scoring_move_so_far_observed when we hit a score with a higher value (initial value: 0)
 
-After you are done, focus on the csv data and output the following report:
-```
+After you are done, focus on the csv data output the following
+SELECTED_MOVE: {move}, {explanation}
+
+csv
 ---
-I have examined each row in the csv table and I have observed the greatest value in the total_points column (the one on the far right) is: {greatest value}, {explanation}
-The entry with the largest total_points is: {entry with greatest total points}, {explanation}
-Therefore, I submit my SELECTED_MOVE: {move}, {explanation}
-```
-
-remaining_before_termination,move,is_checkmate,is_check,is_promotion,is_capture,first_letter,is_first_letter_in_move_lowercase,is_none_of_above,explanation,total_points
+remaining_before_termination,move,is_checkmate,is_check,is_promotion,is_capture,first_letter_in_move,is_first_letter_in_move_lowercase,is_none,move_score,highest_move_score_so_far_observed,highest_scoring_move_so_far_observed,expalanation
